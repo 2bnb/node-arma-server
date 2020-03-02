@@ -109,7 +109,9 @@ Server.prototype.start = function () {
   var startParams = []
   var gamePath = this.armaServerPath()
   var options = {
-    env: process.env
+    env: process.env,
+    detached: true,
+    stdio: 'ignore'
   }
 
   if (this.options.platform === 'linux') {
